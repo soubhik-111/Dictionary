@@ -12,8 +12,10 @@ const getMeaning = (word) => {
         .then(response => response.json())
         .then(response => {
             if (response.valid === true) {
+                temp = response.word
+                temp = word[0].toUpperCase() + word.slice(1,)
                 definition.innerHTML = response.definition
-                wordSearch.innerHTML = response.word
+                wordSearch.innerHTML = temp
             }
             else {
                 str = `<div class="alert alert-warning alert-dismissible fade show position-absolute" style="width: 100%;top:9vh"
